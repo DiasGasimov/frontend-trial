@@ -1,0 +1,33 @@
+.buttons_wrapper {
+    display: flex;
+}
+
+@media screen and (max-width: 599px) {
+    .buttons_wrapper {
+        flex-direction: column;
+        width: 170px;
+    }
+
+    .buttons_wrapper button:nth-child(even) {
+        align-self: end;
+    }
+    
+    .buttons_wrapper button:nth-child(odd) {
+        align-self: start;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .buttons_wrapper {
+        flex-direction: row;
+        height: 150px;
+    }
+
+    .buttons_wrapper button:nth-child(even) {
+        align-self: start;
+    }
+    
+    .buttons_wrapper button:nth-child(odd) {
+        align-self: end;
+    }
+}

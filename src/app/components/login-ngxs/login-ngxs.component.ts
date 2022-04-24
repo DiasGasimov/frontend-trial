@@ -1,4 +1,7 @@
+import { AuthState } from './../../services/auth-state';
+import { Login, Logout } from './../../state-models';
 import {Component, OnInit} from '@angular/core';
+import { Select, Store } from '@ngxs/store';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -9,20 +12,20 @@ import {Observable} from 'rxjs';
 export class LoginNgxsComponent implements OnInit {
   username: string;
   password: string;
-  username$: Observable<string>;
-  loggedIn$: Observable<boolean>;
+  @Select(AuthState.username) username$: Observable<string>;
+  @Select(AuthState.loggedIn) loggedIn$: Observable<boolean>;
 
-  constructor() {
+  constructor(private store: Store) {
   }
 
   ngOnInit() {
   }
 
   doLogin() {
-    //login
+    this.store.dispatch(new Login({ username: this.username, password: this.password}));
   }
 
   logout(): void {
-    //logout
+    this.store.dispatch(new Logout());
   }
 }

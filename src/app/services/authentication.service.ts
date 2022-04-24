@@ -32,7 +32,7 @@ export class AuthenticationService {
 
   authenticate(username: string, password: string) {
     username = username.toLowerCase();
-    const user = this.users.find(u => u.username = username);
+    const user = this.users.find(u => u.username === username);
     if (user && user.password === password) {
       return of(true).pipe(delay(500));
     }

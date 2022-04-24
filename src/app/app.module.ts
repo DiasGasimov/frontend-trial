@@ -11,6 +11,9 @@ import {ContactListComponent} from './components/contact-list/contact-list.compo
 import {MaterialModule} from './material.module';
 import {IntroductionComponent} from './components/static/introduction/introduction.component';
 import {NavBarComponent} from './components/static/nav-bar/nav-bar.component';
+import {NgxsModule} from '@ngxs/store';
+import {NgxsStoragePluginModule} from '@ngxs/storage-plugin';
+import {AuthState} from './services/auth-state';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,10 @@ import {NavBarComponent} from './components/static/nav-bar/nav-bar.component';
     NoopAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxsModule.forRoot([AuthState]),
+    NgxsStoragePluginModule.forRoot({
+      key: ['auth.username', 'auth.loggedIn']
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,47 @@
+.container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    height: 160px;
+    padding: 20px;
+    margin: 0px 10px 10px 0px;
+}
+
+.top-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar_wrapper {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+
+.avatar_wrapper img {
+    border-radius: 50%;
+    height: 100%;
+}
+
+.title_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card-content div {
+    display: flex;
+    align-items: flex-start;
+}
+
+mat-card-content div:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+mat-card-content div mat-icon {
+    font-size: 17px;
+    height: 17px;
+}

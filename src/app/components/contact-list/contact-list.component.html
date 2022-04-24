@@ -1,1 +1,30 @@
-<pre>{{contacts | json}}</pre>
+<div class="container">
+    <mat-card *ngFor="let contact of contacts" class="card">
+        <div class="top-block">
+            <div class="avatar_wrapper">
+                <img src="{{contact.avatarUrl}}">
+            </div>
+            <div class="title_wrapper">
+                <mat-card-title>
+                    {{contact.name}}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{contact.jobTitle}}
+                </mat-card-subtitle>
+            </div>
+        </div>
+        <div class="bottom-block">
+            <mat-card-content>
+                <div>
+                    <mat-icon>phone</mat-icon><span>{{contact.telephone}}</span>
+                </div>
+                <div>
+                    <mat-icon>email</mat-icon><span>{{contact.email}}</span>
+                </div>
+                <div>
+                    <mat-icon>near_me</mat-icon><span>{{contact.address}}</span>
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-card>
+</div>
